@@ -16,8 +16,6 @@ function start() {
 
   const analyser = new AnalyserFromSourceURL(URL);
 
-  onPressCanvas(() => analyser.playAudio());
-
   startFrameLooper(() => {
     clearCanvas();
 
@@ -148,4 +146,4 @@ function setCanvasFullscreen() {
   styleCanvas();
 }
 
-start();
+onPressCanvas(() => start());
