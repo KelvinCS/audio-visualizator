@@ -16,10 +16,12 @@ function start() {
 
   const analyser = new AnalyserFromSourceURL(URL);
 
-  analyser.playAudio();
+  onPressCanvas(() => analyser.playAudio());
 
   startFrameLooper(() => {
     clearCanvas();
+
+    drawPlayButton();
 
     let intensity = 0;
 
@@ -53,6 +55,10 @@ function start() {
 
     drawShockwave(shockWaveSize + radius);
   });
+}
+
+function onPressCanvas(callback) {
+  canvasElement.addEventListener("click", callback);
 }
 
 function getAmplitudeForBar(barIndex, frequencyData, maxOfBars) {
@@ -116,6 +122,23 @@ function drawFrequencyBar(y, w, h, rotation) {
   canvasCtx.translate(middleX, middleY);
   canvasCtx.rotate(rotation);
   canvasCtx.fillRect(0, y, w, h);
+  canvasCtx.restore();
+}
+
+function drawPlayButton() {
+  const middleX = canvasElement.width / 2;
+  const middleY = canvasElement.height / 2;
+
+  canvasCtx.save();
+
+  canvasCtx.beginPath();
+  canvasCtx.fillStyle = "#ffffff";
+  canvasCtx.moveTo(middleX - 20, middleY - 30);
+  canvasCtx.lineTo(middleX - 20, middleY + 30);
+  canvasCtx.lineTo(middleX + 30, middleY);
+
+  canvasCtx.fill();
+
   canvasCtx.restore();
 }
 

@@ -20,9 +20,7 @@ class AnalyserFromSourceURL extends AnalyserNode {
   }
 
   playAudio() {
-    // Solution to avoid error when starting to play audio without user interaction in Chrome
-    setTimeout(() => this.audioElement.play(), 3000);
- 
+    this.audioElement.play();
   }
 
   pauseAudio() {
