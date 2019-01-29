@@ -5,7 +5,7 @@ const barHeight = 2;
 const barSpacing = 2;
 const radius = 140;
 const beta = Math.PI * 0.75;
-const URL = "http://radiofg.impek.com/fg";
+const URL = "https://radiofg.impek.com/fg";
 
 function start() {
   let shockWaveSize = 0;
