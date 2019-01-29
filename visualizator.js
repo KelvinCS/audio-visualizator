@@ -6,6 +6,7 @@ const barSpacing = 2;
 const radius = 140;
 const beta = Math.PI * 0.75;
 const URL = "https://radiofg.impek.com/fg";
+let started = false;
 
 function start() {
   let shockWaveSize = 0;
@@ -19,8 +20,6 @@ function start() {
 
   startFrameLooper(() => {
     clearCanvas();
-
-    drawPlayButton();
 
     let intensity = 0;
 
@@ -147,4 +146,11 @@ function setCanvasFullscreen() {
   styleCanvas();
 }
 
-onPressCanvas(() => start());
+drawPlayButton();
+
+onPressCanvas(() => {
+  if (!started) {
+    start();
+    started = true;
+  }
+});
