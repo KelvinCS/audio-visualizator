@@ -15,6 +15,7 @@ function start() {
   onWindowResize(() => setCanvasFullscreen());
 
   const analyser = new AnalyserFromSourceURL(URL);
+  analyser.playAudio();
 
   startFrameLooper(() => {
     clearCanvas();
