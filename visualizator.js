@@ -5,8 +5,7 @@ const barHeight = 2;
 const barSpacing = 2;
 const radius = 140;
 const beta = Math.PI * 0.75;
-//const URL = "https://radiofg.impek.com/fg";
-const URL = "https://stm.srvvox.com.br:7460/stream"
+const URL = "https://player-ssl.painelstream.net:8046/live"
 let started = false;
 
 function start() {
