@@ -3,7 +3,7 @@ class AnalyserFromSourceURL extends AnalyserNode {
     super(context);
 
     this.audioElement = new Audio(url);
-    this.audioElement.crossOrigin = "*";
+    this.audioElement.crossOrigin = "anonymous";
 
     this.audioSourceNode = context.createMediaElementSource(this.audioElement);
 
